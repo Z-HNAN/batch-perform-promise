@@ -33,14 +33,14 @@ const jobs = {
     output: {
       format: 'umd',
       file: resolve(pkg.unpkg),
-      name: 'rem',
+      name: 'batchPerformPromise',
     },
   },
   min: {
     output: {
       format: 'umd',
       file: resolve(pkg.unpkg.replace(/(.\w+)$/, '.min$1')),
-      name: 'rem',
+      name: 'batchPerformPromise',
     },
     plugins: [terser()],
   },

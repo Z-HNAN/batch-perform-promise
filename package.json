@@ -1,7 +1,7 @@
 {
-  "name": "package-seed-lib",
+  "name": "batch-perform-promise",
   "version": "1.0.0",
-  "description": "publish js lib to npm use typescript. Package with rollup to satisfies multiple package formats",
+  "description": "batch perform promise",
   "scripts": {
     "test": "jest --config jest.config.json",
     "dev": "rollup -w -c --environment FORMAT:esm",
@@ -25,11 +25,11 @@
     "README.md"
   ],
   "repository": {
-    "type": "",
-    "url": ""
+    "type": "git",
+    "url": "https://github.com/Z-HNAN/batch-perform-promise"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["promise"],
+  "author": "zhn68033@163.com",
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
