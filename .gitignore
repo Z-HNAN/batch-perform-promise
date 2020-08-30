@@ -65,3 +65,6 @@ types
 
 # jsdoc output
 out
+
+# mac dir Meta
+.DS_Store
