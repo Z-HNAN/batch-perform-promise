@@ -17,7 +17,7 @@ class BatchPerfromer<T> {
   undoTasks: TaskPayload<T>[];
 
   // promise任务链最大并发数
-  concurrentSize: number
+  concurrentSize: number;
 
   // 当前执行的任务回调
   callback: (value: T) => Promise<any>;
@@ -29,7 +29,7 @@ class BatchPerfromer<T> {
   performWorks: Promise<any>[];
 
   constructor(tasks: T[], callback: (value: T) => Promise<any>, concurrentSize) {
-    this.tasks = tasks.map(t => ({ done: false, success: true, error: null, payload: t }));
+    this.tasks = tasks.map((t) => ({ done: false, success: true, error: null, payload: t }));
     this.concurrentSize = concurrentSize;
     this.undoTasks = [...this.tasks];
     this.callback = callback;
