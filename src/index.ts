@@ -102,7 +102,7 @@ class BatchPerfromer<T> {
 async function batchPerformPromise<T>(
   tasks: T[],
   callback: (value: T) => Promise<any>,
-  concurrentSize: number = 2,
+  concurrentSize = 2,
 ): Promise<TaskPayload<T>[]> {
   // 初始化
   const batchPerfromer = new BatchPerfromer<T>(tasks, callback, concurrentSize);
