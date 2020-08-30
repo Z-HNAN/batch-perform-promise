@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
 const babel = require('rollup-plugin-babel');
+const commonjs = require('rollup-plugin-commonjs');
 const { nodeResolve } = require('@rollup/plugin-node-resolve');
 const rollupTypescript = require('rollup-plugin-typescript2');
 const { terser } = require('rollup-plugin-terser');
@@ -64,8 +65,10 @@ module.exports = merge(
       }),
       babel({
         exclude: 'node_modules/**',
+        runtimeHelpers: true,
         extensions,
       }),
+      commonjs({}),
     ],
   },
   mergeConfig,
