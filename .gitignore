@@ -61,6 +61,7 @@ typings/
 dist
 es
 lib
+types
 
 # jsdoc output
 out
