@@ -25,6 +25,7 @@ module.exports = {
     'prefer-template': 0,
     'no-param-reassign': 0,
     'object-curly-newline': 0,
+    'func-names': 0,
     // "import/extensions": [ "error", "ignorePackages", { js: "never", jsx: "never", ts: "never", tsx: "never" } ]
     // "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".tsx"] }]
   }
