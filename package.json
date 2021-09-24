@@ -28,6 +28,7 @@
     "test:watch": "jest --watch --config jest.config.json",
     "test:coverage": "jest --coverage --config jest.config.json",
     "build": "rollup -c",
+    "pretest": "npm run build",
     "prepublishOnly": "npm run clean && npm run check-types && npm run lint && npm test"
   },
   "dependencies": {
