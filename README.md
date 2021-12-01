@@ -12,7 +12,7 @@
 ### 并行发出任务
 
 ```ts
-import batchPerformPromise from '../src/index';
+import batchPerformPromise from 'batch-perform-promise';
 
 // 准备任务以及处理函数
 const payloads = ['p1', 'p2', 'p3'];
@@ -33,7 +33,7 @@ tasks[0] === {
 ### 并行执行时间
 
 ```ts
-import batchPerformPromise from '../src/index';
+import batchPerformPromise from 'batch-perform-promise';
 
 // 准备任务以及处理函数
 const payloads = ['p1', 'p2', 'p3', 'p4', 'p5'];
