@@ -14,9 +14,6 @@ jobs:
         with:
           node-version: '16.x'
           registry-url: 'https://registry.npmjs.org'
-      
-      - name: Install dependencies
-        run: curl -L https://unpkg.com/@pnpm/self-installer | node
 
       - name: Use pnpm
         run: pnpm install --frozen-lockfile
