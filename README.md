@@ -1,10 +1,10 @@
 # batch-perform-promise
 
-> 3.0版本使用新的打包配置
+> 4.0版本使用father打包
 
 批量执行promise的方法，能够自定义“并行”发出的promise的个数
 
-> 并行: promise发出等待时，为并行等待，由于js单线程，发出多个promise时是同步执行的，等待为并行，整体上有一种并行执行promsie的感觉
+> 并行: promise发出等待时，为并行等待，由于js单线程，发出多个promise时是同步执行的，等待为并行，整体上有一种并行执行promise的感觉
 
 
 ## 快速启动
