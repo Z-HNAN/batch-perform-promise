@@ -4,6 +4,7 @@
   "description": "batch perform promise",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
+  "unpkg": "dist/umd/batch-perform-promise.min.js",
   "scripts": {
     "dev": "father dev",
     "build": "father build",
