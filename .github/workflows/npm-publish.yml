@@ -21,7 +21,8 @@ jobs:
       - name: Use pnpm
         run: pnpm install --frozen-lockfile
 
+      - name: Set npm registry and token
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" >> .npmrc
+
+      - name: Publish to npm
       - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-          NPM_REGISTRY: 'https://registry.npmjs.org'
