@@ -12,11 +12,11 @@ specifiers:
   umi: ^4.0.71
 
 dependencies:
-  '@types/lodash-es': registry.npmmirror.com/@types/lodash-es/4.17.7
   lodash-es: registry.npmmirror.com/lodash-es/4.17.21
 
 devDependencies:
   '@types/jest': registry.npmmirror.com/@types/jest/29.5.2
+  '@types/lodash-es': registry.npmmirror.com/@types/lodash-es/4.17.7
   cross-env: registry.npmmirror.com/cross-env/7.0.3
   father: registry.npmmirror.com/father/4.2.3
   jest: registry.npmmirror.com/jest/29.5.0_ts-node@10.9.1
@@ -2236,13 +2236,13 @@ packages:
     version: 4.17.7
     dependencies:
       '@types/lodash': registry.npmmirror.com/@types/lodash/4.14.195
-    dev: false
+    dev: true
 
   registry.npmmirror.com/@types/lodash/4.14.195:
     resolution: {integrity: sha512-Hwx9EUgdwf2GLarOjQp5ZH8ZmblzcbTBC2wtQWNKARBSxM9ezRIAUpeDTgoQRAFB0+8CNWXVA9+MaSOzOF3nPg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/lodash/-/lodash-4.14.195.tgz}
     name: '@types/lodash'
     version: 4.14.195
-    dev: false
+    dev: true
 
   registry.npmmirror.com/@types/node/20.3.2:
     resolution: {integrity: sha512-vOBLVQeCQfIcF/2Y7eKFTqrMnizK5lRNQ7ykML/5RuwVXVWxYkgwS7xbt4B6fKCUPgbSL5FSsjHQpaGQP/dQmw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/node/-/node-20.3.2.tgz}
