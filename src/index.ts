@@ -1,99 +1,18 @@
-/**
- * 批量执行Promise任务
- */
+import { cloneDeep } from 'lodash-es';
+import Semaphore from "./semaphore";
 
-export type TaskPayload<T> = {
+export type TaskState<Task, TaskRes = void> = {
   done: boolean;
   success: boolean;
   error: Error | null;
-  payload: T;
+  task: Task,
+  taskRes: TaskRes | undefined,
+  /** @deprecated 已过时，旧版本是原任务，该字段不是很合理，拆分为task, taskRes */
+  payload: Task;
 };
 
-class BatchPerfromer<T> {
-  // 当前获得的任务
-  tasks: TaskPayload<T>[];
-
-  // 当前未执行的任务
-  undoTasks: TaskPayload<T>[];
-
-  // promise任务链最大并发数
-  concurrentSize: number;
-
-  // 当前执行的任务回调
-  callback: (value: T) => Promise<any>;
-
-  // 当前batcher执行完任务
-  resolve: (value?: any) => void;
-
-  // 当前执行的任务
-  performWorks: Promise<any>[];
-
-  constructor(tasks: T[], callback: (value: T) => Promise<any>, concurrentSize: number) {
-    this.tasks = tasks.map((t) => ({ done: false, success: true, error: null, payload: t }));
-    this.concurrentSize = concurrentSize;
-    this.undoTasks = [...this.tasks];
-    this.callback = callback;
-    this.performWorks = [];
-    this.resolve = () => undefined;
-  }
-
-  // 当前是否可以继续放任务
-  shouldPerform(): boolean {
-    return this.performWorks.length < this.concurrentSize;
-  }
-
-  // 启动任务
-  async exec(): Promise<any> {
-    return new Promise((resolve) => {
-      this.resolve = resolve;
-      this.beginWork();
-    });
-  }
-
-  // 开始批量操作
-  async beginWork(): Promise<any> {
-    // 出口条件,没有剩余的任务,并且所有任务已经done
-    if (this.undoTasks.length <= 0 && this.tasks.every((t) => t.done === true)) {
-      this.resolve();
-    }
-
-    // 放入任务
-    while (this.shouldPerform() === true && this.undoTasks.length > 0) {
-      const nextTask = this.undoTasks.shift();
-      if (nextTask) {
-        this.performWork(nextTask);
-      }
-    }
-  }
-
-  // 开始执行任务
-  async performWork(task: TaskPayload<T>): Promise<any> {
-    // 当前任务压入队列
-    const performPromise = this.callback(task.payload);
-    this.performWorks.push(performPromise);
-
-    try {
-      // 执行任务
-      await performPromise;
-      // success
-      task.success = true;
-      task.error = null;
-    } catch (error) {
-      // error
-      task.success = false;
-      task.error = error as Error;
-    } finally {
-      task.done = true;
-      // 去除该元素
-      const currentPromiseIdx = this.performWorks.indexOf(performPromise);
-      this.performWorks = [
-        ...this.performWorks.slice(0, currentPromiseIdx),
-        ...this.performWorks.slice(currentPromiseIdx + 1),
-      ];
-      // 标志此任务完成
-      this.beginWork();
-    }
-  }
+interface BatchPerformPromise<Task, TaskRes> extends Promise<TaskState<Task, TaskRes>[]> {
+  getTaskStateList: () => Array<TaskState<Task, TaskRes>>
 }
 
 /**
@@ -102,19 +21,37 @@ class BatchPerfromer<T> {
  * @param callback 执行Promise的方法
  * @param concurrentSize 并发执行Promise数量.default=2
  */
-async function batchPerformPromise<T>(
-  tasks: T[],
-  callback: (value: T) => Promise<any>,
+function batchPerformPromise<Task, TaskRes = void>(
+  tasks: Task[],
+  callback: (value: Task) => Promise<TaskRes>,
   concurrentSize = 2,
-): Promise<TaskPayload<T>[]> {
-  // 初始化
-  const batchPerfromer = new BatchPerfromer<T>(tasks, callback, concurrentSize);
+): BatchPerformPromise<Task, TaskRes> {
+  const taskStateList: TaskState<Task, TaskRes>[] = tasks.map(task => ({ done: false, success: false, error: null, task: task, taskRes: undefined, payload: task }));
+  const semaphore = new Semaphore(concurrentSize);
 
-  // 执行批量操作
-  await batchPerfromer.exec();
+  const batchPromise = new Promise<TaskState<Task, TaskRes>[]>(async resolve => {
+    const taskExecList = taskStateList.map(taskState => async () => {
+      await semaphore.acquire();
+      try {
+        taskState.taskRes = await callback(taskState.task);
+        taskState.success = true;
+        taskState.error = null;
+      } catch (err) {
+        taskState.success = false;
+        taskState.error = err as Error;
+      } finally {
+        taskState.done = true;
+        await semaphore.release();
+      }
+    })
+    await Promise.all(taskExecList.map(taskExec => taskExec()));
+    
+    resolve(taskStateList);
+  }) as BatchPerformPromise<Task, TaskRes>;
 
-  // 返回操作结果
-  return batchPerfromer.tasks;
+  batchPromise.getTaskStateList = () => cloneDeep(taskStateList);
+
+  return batchPromise;
 }
 
 export default batchPerformPromise;
