@@ -14,6 +14,9 @@ jobs:
         with:
           node-version: '16.x'
           registry-url: 'https://registry.npmjs.org'
+      
+      - name: Install pnpm
+        run: npm install -g pnpm@7
 
       - name: Use pnpm
         run: pnpm install --frozen-lockfile
