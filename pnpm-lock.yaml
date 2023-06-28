@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@babel/runtime': ^7.22.5
   '@types/jest': ^29
   '@types/lodash-es': ^4.17.7
   cross-env: ^7
@@ -12,6 +13,7 @@ specifiers:
   umi: ^4.0.71
 
 dependencies:
+  '@babel/runtime': registry.npmmirror.com/@babel/runtime/7.22.5
   lodash-es: registry.npmmirror.com/lodash-es/4.17.21
 
 devDependencies:
@@ -662,6 +664,14 @@ packages:
     dependencies:
       regenerator-runtime: registry.npmmirror.com/regenerator-runtime/0.13.11
     dev: true
+
+  registry.npmmirror.com/@babel/runtime/7.22.5:
+    resolution: {integrity: sha512-ecjvYlnAaZ/KVneE/OdKYBYfgXV3Ptu6zQWmgEF7vwKhQnvVS6bjMD2XYgj+SNvQ1GfK/pjgokfPkC/2CO8CuA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@babel/runtime/-/runtime-7.22.5.tgz}
+    name: '@babel/runtime'
+    version: 7.22.5
+    engines: {node: '>=6.9.0'}
+    dependencies:
+      regenerator-runtime: registry.npmmirror.com/regenerator-runtime/0.13.11
 
   registry.npmmirror.com/@babel/template/7.22.5:
     resolution: {integrity: sha512-X7yV7eiwAxdj9k94NEylvbVHLiVG1nvzCV2EAowhxLTwODV1jl9UzZ48leOC0sH7OnuHrIkllaBgneUykIcZaw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@babel/template/-/template-7.22.5.tgz}
@@ -1686,7 +1696,7 @@ packages:
     peerDependencies:
       react: '>=16.3.0'
     dependencies:
-      '@babel/runtime': registry.npmmirror.com/@babel/runtime/7.21.0
+      '@babel/runtime': registry.npmmirror.com/@babel/runtime/7.22.5
       hoist-non-react-statics: registry.npmmirror.com/hoist-non-react-statics/3.3.2
       react-is: registry.npmmirror.com/react-is/16.13.1
     dev: true
@@ -1700,7 +1710,7 @@ packages:
     peerDependencies:
       react: '>=16.3.0'
     dependencies:
-      '@babel/runtime': registry.npmmirror.com/@babel/runtime/7.21.0
+      '@babel/runtime': registry.npmmirror.com/@babel/runtime/7.22.5
       hoist-non-react-statics: registry.npmmirror.com/hoist-non-react-statics/3.3.2
       react: registry.npmmirror.com/react/18.1.0
       react-is: registry.npmmirror.com/react-is/16.13.1
@@ -2826,7 +2836,7 @@ packages:
     name: '@umijs/history'
     version: 5.3.1
     dependencies:
-      '@babel/runtime': registry.npmmirror.com/@babel/runtime/7.21.0
+      '@babel/runtime': registry.npmmirror.com/@babel/runtime/7.22.5
       query-string: registry.npmmirror.com/query-string/6.14.1
     dev: true
 
@@ -5495,7 +5505,7 @@ packages:
     name: history
     version: 5.3.0
     dependencies:
-      '@babel/runtime': registry.npmmirror.com/@babel/runtime/7.21.0
+      '@babel/runtime': registry.npmmirror.com/@babel/runtime/7.22.5
     dev: true
 
   registry.npmmirror.com/hmac-drbg/1.0.1:
@@ -8897,7 +8907,7 @@ packages:
       react: ^16.6.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.6.0 || ^17.0.0 || ^18.0.0
     dependencies:
-      '@babel/runtime': registry.npmmirror.com/@babel/runtime/7.21.0
+      '@babel/runtime': registry.npmmirror.com/@babel/runtime/7.22.5
       invariant: registry.npmmirror.com/invariant/2.2.4
       prop-types: registry.npmmirror.com/prop-types/15.8.1
       react-fast-compare: registry.npmmirror.com/react-fast-compare/3.2.2
@@ -8913,7 +8923,7 @@ packages:
       react: ^16.6.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.6.0 || ^17.0.0 || ^18.0.0
     dependencies:
-      '@babel/runtime': registry.npmmirror.com/@babel/runtime/7.21.0
+      '@babel/runtime': registry.npmmirror.com/@babel/runtime/7.22.5
       invariant: registry.npmmirror.com/invariant/2.2.4
       prop-types: registry.npmmirror.com/prop-types/15.8.1
       react: registry.npmmirror.com/react/18.1.0
@@ -9079,7 +9089,6 @@ packages:
     resolution: {integrity: sha512-kY1AZVr2Ra+t+piVaJ4gxaFaReZVH40AKNo7UCX6W+dEwBo/2oZJzqfuN1qLq1oL45o56cPaTXELwrTh8Fpggg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/regenerator-runtime/-/regenerator-runtime-0.13.11.tgz}
     name: regenerator-runtime
     version: 0.13.11
-    dev: true
 
   registry.npmmirror.com/regexp.prototype.flags/1.5.0:
     resolution: {integrity: sha512-0SutC3pNudRKgquxGoRGIz946MZVHqbNfPjBdxeOhBrdgDKlRoXmYLQN9xRbrR09ZXWeGAdPuif7egofn6v5LA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/regexp.prototype.flags/-/regexp.prototype.flags-1.5.0.tgz}
