@@ -4,7 +4,6 @@ specifiers:
   '@babel/runtime': ^7.22.5
   '@types/jest': ^29
   '@types/lodash': ^4.14.195
-  '@types/lodash-es': ^4.17.7
   cross-env: ^7
   father: ^4.2.3
   jest: ^29
@@ -20,7 +19,6 @@ dependencies:
 devDependencies:
   '@types/jest': registry.npmmirror.com/@types/jest/29.5.2
   '@types/lodash': registry.npmmirror.com/@types/lodash/4.14.195
-  '@types/lodash-es': registry.npmmirror.com/@types/lodash-es/4.17.7
   cross-env: registry.npmmirror.com/cross-env/7.0.3
   father: registry.npmmirror.com/father/4.2.3
   jest: registry.npmmirror.com/jest/29.5.0_ts-node@10.9.1
@@ -2240,14 +2238,6 @@ packages:
     resolution: {integrity: sha512-Hr5Jfhc9eYOQNPYO5WLDq/n4jqijdHNlDXjuAQkkt+mWdQR+XJToOHrsD4cPaMXpn6KO7y2+wM8AZEs8VpBLVA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/json-schema/-/json-schema-7.0.12.tgz}
     name: '@types/json-schema'
     version: 7.0.12
-    dev: true
-
-  registry.npmmirror.com/@types/lodash-es/4.17.7:
-    resolution: {integrity: sha512-z0ptr6UI10VlU6l5MYhGwS4mC8DZyYer2mCoyysZtSF7p26zOX8UpbrV0YpNYLGS8K4PUFIyEr62IMFFjveSiQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/lodash-es/-/lodash-es-4.17.7.tgz}
-    name: '@types/lodash-es'
-    version: 4.17.7
-    dependencies:
-      '@types/lodash': registry.npmmirror.com/@types/lodash/4.14.195
     dev: true
 
   registry.npmmirror.com/@types/lodash/4.14.195:
