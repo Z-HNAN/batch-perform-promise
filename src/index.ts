@@ -1,5 +1,6 @@
 import { cloneDeep } from 'lodash';
 import Semaphore from "./semaphore";
+import clone from './clone.js';
 
 export type TaskState<Task, TaskRes = void> = {
   done: boolean;
@@ -49,7 +50,7 @@ function batchPerformPromise<Task, TaskRes = void>(
     resolve(taskStateList);
   }) as BatchPerformPromise<Task, TaskRes>;
 
-  batchPromise.getTaskStateList = () => cloneDeep(taskStateList);
+  batchPromise.getTaskStateList = () => clone(taskStateList);
 
   return batchPromise;
 }

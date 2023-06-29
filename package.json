@@ -36,7 +36,6 @@
   },
   "devDependencies": {
     "@types/jest": "^29",
-    "@types/lodash": "^4.14.195",
     "babel-plugin-add-module-exports": "^1.0.4",
     "cross-env": "^7",
     "father": "^4.2.3",
@@ -46,7 +45,6 @@
     "umi": "^4.0.71"
   },
   "dependencies": {
-    "@babel/runtime": "^7.22.5",
-    "lodash": "^4.17.21"
+    "@babel/runtime": "^7.22.5"
   }
 }
