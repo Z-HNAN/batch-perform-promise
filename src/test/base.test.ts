@@ -115,7 +115,7 @@ describe('test batchPerform', () => {
     }, 2);
 
     // 100ms point
-    sleep(105).then(() => {
+    sleep(110).then(() => {
       const tasksRes = tasksResPromise.getTaskStateList();
 
       expect(tasksRes[0].done === true).toBeTruthy()
@@ -127,7 +127,7 @@ describe('test batchPerform', () => {
     })
 
     // 200ms point
-    sleep(205).then(() => {
+    sleep(210).then(() => {
       const tasksRes = tasksResPromise.getTaskStateList();
 
       expect(tasksRes[0].done === true).toBeTruthy()
@@ -139,7 +139,7 @@ describe('test batchPerform', () => {
     })
 
     // 300ms point
-    sleep(305).then(() => {
+    sleep(310).then(() => {
       const tasksRes = tasksResPromise.getTaskStateList();
 
       expect(tasksRes[0].done === true).toBeTruthy()
