@@ -1,4 +1,4 @@
-import { cloneDeep } from 'lodash-es';
+import { cloneDeep } from 'lodash';
 import Semaphore from "./semaphore";
 
 export type TaskState<Task, TaskRes = void> = {
