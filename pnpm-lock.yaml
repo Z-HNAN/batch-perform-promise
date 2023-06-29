@@ -4,6 +4,7 @@ specifiers:
   '@babel/runtime': ^7.22.5
   '@types/jest': ^29
   '@types/lodash': ^4.14.195
+  babel-plugin-add-module-exports: ^1.0.4
   cross-env: ^7
   father: ^4.2.3
   jest: ^29
@@ -19,6 +20,7 @@ dependencies:
 devDependencies:
   '@types/jest': registry.npmmirror.com/@types/jest/29.5.2
   '@types/lodash': registry.npmmirror.com/@types/lodash/4.14.195
+  babel-plugin-add-module-exports: registry.npmmirror.com/babel-plugin-add-module-exports/1.0.4
   cross-env: registry.npmmirror.com/cross-env/7.0.3
   father: registry.npmmirror.com/father/4.2.3
   jest: registry.npmmirror.com/jest/29.5.0_ts-node@10.9.1
@@ -3337,6 +3339,12 @@ packages:
       slash: registry.npmmirror.com/slash/3.0.0
     transitivePeerDependencies:
       - supports-color
+    dev: true
+
+  registry.npmmirror.com/babel-plugin-add-module-exports/1.0.4:
+    resolution: {integrity: sha512-g+8yxHUZ60RcyaUpfNzy56OtWW+x9cyEe9j+CranqLiqbju2yf/Cy6ZtYK40EZxtrdHllzlVZgLmcOUCTlJ7Jg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/babel-plugin-add-module-exports/-/babel-plugin-add-module-exports-1.0.4.tgz}
+    name: babel-plugin-add-module-exports
+    version: 1.0.4
     dev: true
 
   registry.npmmirror.com/babel-plugin-dynamic-import-node/2.3.3:
