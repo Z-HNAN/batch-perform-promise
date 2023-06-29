@@ -1,6 +1,6 @@
 {
   "name": "batch-perform-promise",
-  "version": "4.0.1-beta.3",
+  "version": "4.0.1-beta.4",
   "description": "batch perform promise",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
