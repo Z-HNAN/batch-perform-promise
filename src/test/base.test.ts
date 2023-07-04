@@ -1,4 +1,4 @@
-import batchPerformPromise, { TaskState } from '../index';
+import { batchPerformPromise, TaskState } from '../index';
 
 describe('test batchPerform', () => {
   test('all success', async () => {
