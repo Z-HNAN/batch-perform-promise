@@ -2,6 +2,10 @@
  * https://github.com/pvorb/clone/blob/master/clone.js
  */
 
+/**
+ * clone
+ * @type {<T>(val: T) => T}
+ */
 var clone = (function() {
   'use strict';
   

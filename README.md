@@ -1,6 +1,6 @@
 # batch-perform-promise
 
-> 4.0版本使用father打包+semaphore实现
+> 5.0版本使用father打包+semaphore实现
 
 批量执行promise的方法，能够自定义“并行”发出的promise的个数
 
@@ -12,7 +12,7 @@
 ### 并行发出任务
 
 ```ts
-import batchPerformPromise from 'batch-perform-promise';
+import { batchPerformPromise } from 'batch-perform-promise';
 
 // 准备任务以及处理函数
 const payloads = ['p1', 'p2', 'p3'];
@@ -33,7 +33,7 @@ tasks[0] === {
 ### 并行执行时间
 
 ```ts
-import batchPerformPromise from 'batch-perform-promise';
+import { batchPerformPromise } from 'batch-perform-promise';
 
 // 准备任务以及处理函数
 const payloads = ['p1', 'p2', 'p3', 'p4', 'p5'];
@@ -55,12 +55,4 @@ await batchPerformPromise<string>(payloads, handler);
 //  共计6s
 ```
 
-## API
-
-```ts
-async function batchPerformPromise<T>(
-  tasks: T[], // 传入的任务
-  callback: (value: T) => Promise<any>, // 处理任务的handler，要求为promise调用
-  concurrentSize = 2, // 可选参数，并行的promise个数
-): Promise<TaskPayload<T>[]>
-```
+更多使用方式参考test文件

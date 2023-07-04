@@ -1,4 +1,4 @@
-import { cloneDeep } from 'lodash';
+// import { cloneDeep } from 'lodash';
 import Semaphore from "./semaphore";
 import clone from './clone.js';
 
@@ -55,4 +55,4 @@ function batchPerformPromise<Task, TaskRes = void>(
   return batchPromise;
 }
 
-export default batchPerformPromise;
+export { batchPerformPromise }
